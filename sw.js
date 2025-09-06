@@ -1,14 +1,14 @@
 // Define a cache name
-const CACHE_NAME = 'pinkstock-manager-v1';
+const CACHE_NAME = 'pinkstock-manager-v2'; // Bumped version to ensure update
 
 // List of files to cache
 const urlsToCache = [
   './',
   './index.html',
-  './index.tsx',
-  // You might need to list other static assets like icons or component files if they are separate
+  './main.tsx', // Cache the correct, combined TSX file
   'https://cdn.tailwindcss.com',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+  'https://unpkg.com/@babel/standalone/babel.min.js' // Cache Babel for offline transpilation
 ];
 
 // Install event: opens the cache and adds the core files to it
@@ -47,6 +47,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
+            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
