@@ -1,0 +1,5 @@
+{
+  "name": "PinkStock Manager",
+  "description": "An elegant inventory management tool for small businesses to track raw materials. Features include adding, updating, and deleting items, a searchable and filterable inventory list, low-stock alerts, and data export.",
+  "requestFramePermissions": []
+}
