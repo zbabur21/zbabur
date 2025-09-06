@@ -3,9 +3,9 @@ const CACHE_NAME = 'pinkstock-manager-v1';
 
 // List of files to cache
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/index.tsx',
+  './',
+  './index.html',
+  './index.tsx',
   // You might need to list other static assets like icons or component files if they are separate
   'https://cdn.tailwindcss.com',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
